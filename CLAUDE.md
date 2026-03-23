@@ -4,14 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Template repository** for building frontend applications with:
+**BetterBond Commission Payments** - Centralised tool for commission staff to review, park, and process agent commission payments with a real-time dashboard and per-agency payment management workflow.
 
-- Next.js 16 (App Router) + React 19 + TypeScript 5 (strict)
-- Tailwind CSS 4 + Shadcn UI (via MCP server)
-- Vitest + React Testing Library
-- Production-ready API client for OpenAPI-defined REST endpoints
+**Tech Stack:** Next.js 16 + React 19 + TypeScript 5 + Tailwind CSS 4 + Shadcn UI
 
-Users clone this template and use Claude Code to generate features, components, and API integrations.
+**Backend API:** Defined in `documentation/Api Definition.yaml`. Connects to live REST API at `http://localhost:8042`. Authentication via BFF at `http://localhost:5120`.
+
+**Planned Epics:**
+1. Authentication & App Shell - BFF auth redirect, top nav, user display name, logout, role-based visibility
+2. Dashboard Screen - Six chart/stat components, Agency Summary grid, agency-scoped filtering, ZAR formatting
+3. Payment Management Screen - Main Grid + Parked Grid, Park/Unpark flows, role-based buttons, filtering
+4. Initiate Payment Flow - Admin-only bulk payment initiation with confirmation modal
+5. Payments Made Screen & Invoice Generation - Batches grid, search/filter, client-side PDF generation
+6. Admin Utilities - Reset Demo Data, User Management
 
 ## Repository Structure
 
