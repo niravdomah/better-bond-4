@@ -11,7 +11,10 @@ import type {
 
 // Admin endpoints
 export const getUsers = (params?: UserListParams) =>
-  get<UserListResponse>('/v1/users', params as Record<string, string | number | boolean | undefined>);
+  get<UserListResponse>(
+    '/v1/users',
+    params as Record<string, string | number | boolean | undefined>,
+  );
 
 export const getUser = (id: string) => get<User>(`/v1/users/${id}`);
 

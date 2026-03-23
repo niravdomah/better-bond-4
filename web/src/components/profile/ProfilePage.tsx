@@ -40,10 +40,7 @@ export function ProfilePage() {
     fetchProfile();
   }, [fetchProfile]);
 
-  const handleProfileUpdate = async (data: {
-    name: string;
-    email: string;
-  }) => {
+  const handleProfileUpdate = async (data: { name: string; email: string }) => {
     setIsSubmitting(true);
     setError(null);
     setSuccessMessage(null);
@@ -70,7 +67,9 @@ export function ProfilePage() {
       await changePassword(data);
       setSuccessMessage('Password changed successfully');
     } catch {
-      setError('Failed to change password. Please check your current password.');
+      setError(
+        'Failed to change password. Please check your current password.',
+      );
     } finally {
       setIsSubmitting(false);
     }

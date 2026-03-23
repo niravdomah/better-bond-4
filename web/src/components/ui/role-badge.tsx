@@ -4,7 +4,10 @@ import { Badge } from './badge';
 
 const roleVariantMap: Record<
   UserRole,
-  { variant: 'destructive' | 'default' | 'secondary' | 'outline'; className?: string }
+  {
+    variant: 'destructive' | 'default' | 'secondary' | 'outline';
+    className?: string;
+  }
 > = {
   [UserRole.ADMIN]: { variant: 'destructive' },
   [UserRole.POWER_USER]: {

@@ -38,7 +38,9 @@ interface UserFormDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   user: User | null;
-  onSubmit: (data: CreateFormValues | Omit<CreateFormValues, 'password'>) => Promise<void>;
+  onSubmit: (
+    data: CreateFormValues | Omit<CreateFormValues, 'password'>,
+  ) => Promise<void>;
   isSubmitting: boolean;
 }
 

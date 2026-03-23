@@ -48,7 +48,15 @@ export function UserManagement() {
       if (roleFilter !== 'all') params.role = roleFilter;
       if (statusFilter !== 'all') params.isActive = statusFilter === 'active';
 
-      const data = await getUsers(params as { page?: number; limit?: number; search?: string; role?: UserRole; isActive?: boolean });
+      const data = await getUsers(
+        params as {
+          page?: number;
+          limit?: number;
+          search?: string;
+          role?: UserRole;
+          isActive?: boolean;
+        },
+      );
       setUsers(data.users);
       setTotal(data.total);
       setError(null);
@@ -93,9 +101,7 @@ export function UserManagement() {
       setEditingUser(null);
       await fetchUsers();
     } catch {
-      setError(
-        editingUser ? 'Failed to update user' : 'Failed to create user',
-      );
+      setError(editingUser ? 'Failed to update user' : 'Failed to create user');
     } finally {
       setIsSubmitting(false);
     }

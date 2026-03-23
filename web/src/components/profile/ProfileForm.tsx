@@ -25,7 +25,11 @@ interface ProfileFormProps {
   isSubmitting: boolean;
 }
 
-export function ProfileForm({ user, onSubmit, isSubmitting }: ProfileFormProps) {
+export function ProfileForm({
+  user,
+  onSubmit,
+  isSubmitting,
+}: ProfileFormProps) {
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(updateProfileSchema),
     defaultValues: {
